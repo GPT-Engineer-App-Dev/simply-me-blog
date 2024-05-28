@@ -1,19 +1,40 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      <Navbar />
+      <Container maxW="container.lg" mt={8}>
+        <Flex direction={{ base: "column", md: "row" }} gap={8}>
+          <Box flex="3">
+            <Heading as="h1" size="xl" mb={4}>
+              Welcome to My Blog
+            </Heading>
+            <VStack spacing={4} align="start">
+              <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" w="full">
+                <Heading size="md">Blog Post Title 1</Heading>
+                <Text mt={2}>This is a summary of the blog post...</Text>
+              </Box>
+              <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" w="full">
+                <Heading size="md">Blog Post Title 2</Heading>
+                <Text mt={2}>This is a summary of the blog post...</Text>
+              </Box>
+              <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" w="full">
+                <Heading size="md">Blog Post Title 3</Heading>
+                <Text mt={2}>This is a summary of the blog post...</Text>
+              </Box>
+            </VStack>
+          </Box>
+          <Box flex="1">
+            <Sidebar />
+          </Box>
+        </Flex>
+      </Container>
+      <Footer />
+    </Box>
   );
 };
 
