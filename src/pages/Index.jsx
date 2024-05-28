@@ -1,19 +1,41 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, Box, Flex, VStack, Heading, Text } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      <Navbar />
+      <Container maxW="container.xl" mt={8}>
+        <Flex direction={{ base: "column", md: "row" }} gap={8}>
+          <Box flex="3">
+            <VStack spacing={8} align="start">
+              <Box>
+                <Heading as="h2" size="xl" mb={2}>
+                  Welcome to My Blog
+                </Heading>
+                <Text fontSize="lg">
+                  This is a personal blog about my life. Stay tuned for more updates!
+                </Text>
+              </Box>
+              <Box>
+                <Heading as="h3" size="lg" mb={2}>
+                  Latest Post
+                </Heading>
+                <Text>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                </Text>
+              </Box>
+            </VStack>
+          </Box>
+          <Box flex="1">
+            <Sidebar />
+          </Box>
+        </Flex>
+      </Container>
+      <Footer />
+    </Box>
   );
 };
 
